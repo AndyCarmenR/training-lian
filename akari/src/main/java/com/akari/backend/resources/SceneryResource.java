@@ -25,7 +25,7 @@ public class SceneryResource {
         return new ResponseEntity<>(sceneryService.getAllSceneries(),HttpStatus.OK);
     }
 
-    @GetMapping(value = "/say-hi/{name}")
+    @GetMapping(value = "/say-hi")
     public ResponseEntity<String>hello(@RequestParam String name){
         return new ResponseEntity<>(sceneryService.sayHi(name), HttpStatus.OK);
     }
