@@ -10,23 +10,23 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-
+@RequestMapping(value = "/api")
 public class SceneryResource {
 
     @Autowired
     SceneryService sceneryService;
     @GetMapping(value = "/scenery/{id}")
-    public ResponseEntity<CatScenery> getById(@PathVariable long id){
+    public ResponseEntity<CatScenery> getById(@RequestParam long id){
         return new ResponseEntity<>(sceneryService.getSceneryById(id),HttpStatus.OK) ;
     }
 
-    @GetMapping(value = "/sceneries/")
+    @GetMapping(value = "/sceneries")
     public ResponseEntity<List<CatScenery>>getAll(){
         return new ResponseEntity<>(sceneryService.getAllSceneries(),HttpStatus.OK);
     }
 
     @GetMapping(value = "/say-hi/{name}")
-    public ResponseEntity<String>hello(@PathVariable String name){
+    public ResponseEntity<String>hello(@RequestParam String name){
         return new ResponseEntity<>(sceneryService.sayHi(name), HttpStatus.OK);
     }
 }
