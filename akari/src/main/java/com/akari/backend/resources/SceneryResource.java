@@ -16,8 +16,8 @@ public class SceneryResource {
     @Autowired
     SceneryService sceneryService;
     @GetMapping(value = "/scenery/{id}")
-    public CatScenery getById(@PathVariable long id){
-        return sceneryService.getSceneryById(id);
+    public ResponseEntity<CatScenery> getById(@PathVariable long id){
+        return new ResponseEntity<>(sceneryService.getSceneryById(id),HttpStatus.OK) ;
     }
 
     @GetMapping(value = "/sceneries/")
