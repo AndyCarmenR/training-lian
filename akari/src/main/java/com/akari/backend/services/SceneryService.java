@@ -2,6 +2,7 @@ package com.akari.backend.services;
 
 import com.akari.backend.models.CatScenery;
 import com.akari.backend.repository.SceneryRepository;
+import com.akari.backend.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +33,8 @@ public class SceneryService {
 
     public String sayHi(String name){
         if(name.isBlank()){
-            return "Hi mate, sorry I don't know your name :(";
+            return Constants.GREETING_NO_NAME;
         }
-        return "Hi "+name+" nice to meet you!";
+        return Constants.GREETING_NAME.replace("_NAME_",name);
     }
 }
