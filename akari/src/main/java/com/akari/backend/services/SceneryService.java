@@ -29,4 +29,11 @@ public class SceneryService {
         List<CatScenery>sceneries=sceneryRepository.findAll();
         return sceneries;
     }
+
+    public String sayHi(String name){
+        if(name.isBlank()){
+            return "Hi mate, sorry I don't know your name :(";
+        }
+        return "Hi "+name+" nice to meet you!";
+    }
 }
