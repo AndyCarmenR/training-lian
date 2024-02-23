@@ -40,7 +40,7 @@ public class SceneryTest {
     @Test
     public void testGreetingWithName(){
         String greeting = Constants.GREETING_NAME.replace("_NAME_",name);
-        when(sceneryService.sayHi(name)).thenReturn(greeting);
+        //when(sceneryService.sayHi(name)).thenReturn(greeting);
         ResponseEntity<String> response=sceneryResource.hello(name);
         assertEquals(response.getStatusCode(), HttpStatus.OK);
         assertEquals(response.getBody(),greeting);
@@ -49,7 +49,7 @@ public class SceneryTest {
     @Test
     public void testGreetingWithoutName(){
         String greeting = Constants.GREETING_NO_NAME;
-        when(sceneryService.sayHi("")).thenReturn(greeting);
+        //when(sceneryService.sayHi("")).thenReturn(greeting);
         ResponseEntity<String> response=sceneryResource.hello("");
         assertEquals(response.getStatusCode(), HttpStatus.OK);
         assertEquals(response.getBody(),greeting);
