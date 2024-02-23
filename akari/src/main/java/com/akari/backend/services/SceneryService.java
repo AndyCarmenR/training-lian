@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.io.Console;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +19,6 @@ public class SceneryService {
     @Autowired
     SceneryRepository sceneryRepository;
     public CatScenery getSceneryById(Long id){
-
         CatScenery scenery=new CatScenery();
         Optional<CatScenery>sceneryOpt=sceneryRepository.findById(id);
         if (sceneryOpt.isPresent()) {

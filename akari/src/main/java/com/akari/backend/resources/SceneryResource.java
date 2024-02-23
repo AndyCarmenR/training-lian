@@ -14,7 +14,7 @@ import java.util.List;
 public class SceneryResource {
 
     @Autowired
-    SceneryService sceneryService;
+    private SceneryService sceneryService;
     @GetMapping(value = "/scenery/{id}")
     public ResponseEntity<CatScenery> getById(@RequestParam long id){
         return new ResponseEntity<>(sceneryService.getSceneryById(id),HttpStatus.OK) ;
@@ -25,7 +25,7 @@ public class SceneryResource {
         return new ResponseEntity<>(sceneryService.getAllSceneries(),HttpStatus.OK);
     }
 
-    @GetMapping(value = "/say-hi/{name}")
+    @GetMapping(value = "/say-hi")
     public ResponseEntity<String>hello(@RequestParam String name){
         return new ResponseEntity<>(sceneryService.sayHi(name), HttpStatus.OK);
     }
